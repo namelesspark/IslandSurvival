@@ -1,0 +1,4 @@
+repository "IslandSurvival/IslandSurvival@14569675937023@cloud"
+  path "/"
+    br "/main"
+    co "/main"
