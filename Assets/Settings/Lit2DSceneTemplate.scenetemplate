@@ -10,10 +10,8 @@ Texture2D:
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 3eb422a44b812e16b34078a6083bea48
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
   m_IsAlphaChannelOptional: 1
-  serializedVersion: 2
+  serializedVersion: 4
   m_Width: 1068
   m_Height: 615
   m_CompleteImageSize: 1970460
@@ -22,7 +20,8 @@ Texture2D:
   m_MipCount: 1
   m_IsReadable: 1
   m_IsPreProcessed: 0
-  m_IgnoreMasterTextureLimit: 0
+  m_IgnoreMipmapLimit: 0
+  m_MipmapLimitGroupName: 
   m_StreamingMipmaps: 0
   m_StreamingMipmapsPriority: 0
   m_VTOnly: 0
@@ -65,7 +64,46 @@ MonoBehaviour:
     the 2D Renderer in Universal RP.
   preview: {fileID: -3604256930052969394}
   dependencies:
-  - dependency: {fileID: 2800000, guid: b3ab972b21db85d48ade9657efdd4771, type: 3}
+  - dependency: {fileID: 11400000, guid: 1e1dd578d3ccdbc4298b8d808f1c6938, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 3465a262c93599e4c9d7d291dba6eba4, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: b59c37180e4516e4a9d8b948cc85d04e, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 2800000, guid: a5994f41d8a85744d869f00e6828bb76, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 11400000, guid: 836bf6a99b60c30478c9b64ede0fbd44, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: a3e3942032435e64595e7c1bc2e99978, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 4cf470696d3eb5b45a8b8eb407cd1f30, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 985c27b8afb6faa468cf98daf2c794c4, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: af3892c217a1abd43b278b230e1208f9, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 65f09ecad75a2bf469dbf5db0210386d, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 32448a7437709b842b69d38d25b109d8, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 11de642b4f921b04d8aaa579b79e3e31, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 2800000, guid: 2ff73f8ec41810449a91b230f0a9216c, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 11400000, guid: 68b3219b7de88dd48bb7ea55fb34e310, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 2800000, guid: 8086b13980f37ba499cf012264cfb375, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 11400000, guid: c4759fa90ec9ced44979442b8661b472, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 6c5cf9160b7ad504587a9b46635cc4f4, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: bd3c7c0b61df5354bb9a50975ec224be, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 02e739380ccb9c04e856535313284194, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 3b2a6fb5a37820549947fe1f200bf492, type: 2}
     instantiationMode: 1
   templatePipeline: {fileID: 0}
+  badge: {fileID: 0}
   addToDefaults: 1

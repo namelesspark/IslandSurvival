@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Mountain
   layers:
   - Default
   - TransparentFX
@@ -13,12 +14,12 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
+  - Agent
   - Obstacle
   - Item
   - Hazard
-  - Agent
-  - Bounds
+  - Mountain
+  - 
   - 
   - 
   - 
@@ -41,14 +42,29 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Layer 1
+  - name: Water
+    uniqueID: 1642126161
+    locked: 0
+  - name: Ground
     uniqueID: 2425651459
     locked: 0
-  - name: Layer 2
+  - name: Mountain
+    uniqueID: 3079248721
+    locked: 0
+  - name: Object
     uniqueID: 4250941897
     locked: 0
-  - name: Layer 3
+  - name: Decoration
     uniqueID: 4189426099
+    locked: 0
+  - name: Agent
+    uniqueID: 6245531
     locked: 0
   m_RenderingLayers:
   - Default
+  - Object
+  - Agent
+  - Mountain
+  - Decoration
+  - Ground
+  - Water
