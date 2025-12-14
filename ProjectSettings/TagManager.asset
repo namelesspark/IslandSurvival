@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Mountain
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -42,29 +43,5 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Water
-    uniqueID: 1642126161
-    locked: 0
-  - name: Ground
-    uniqueID: 2425651459
-    locked: 0
-  - name: Mountain
-    uniqueID: 3079248721
-    locked: 0
-  - name: Object
-    uniqueID: 4250941897
-    locked: 0
-  - name: Decoration
-    uniqueID: 4189426099
-    locked: 0
-  - name: Agent
-    uniqueID: 6245531
-    locked: 0
   m_RenderingLayers:
   - Default
-  - Object
-  - Agent
-  - Mountain
-  - Decoration
-  - Ground
-  - Water
