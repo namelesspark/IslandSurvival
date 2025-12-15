@@ -4,10 +4,11 @@ using UnityEngine;
 
 public enum ItemType
 {
-    Coconut,   // 허기+
+    Fruit,   // 허기+
     Water,     // 갈증+
     Campfire,  // 체온+
-    Medkit     // HP+
+    Worm,
+    FirstAidKit     // HP+
 }
 
 public class Item : MonoBehaviour
@@ -32,16 +33,19 @@ public class Item : MonoBehaviour
 
         switch (itemType)
         {
-            case ItemType.Coconut:
+            case ItemType.Fruit:
                 stats.ApplyDelta(0f, +value, 0f, 0f);
                 break;
             case ItemType.Water:
                 stats.ApplyDelta(0f, 0f, +value, 0f);
                 break;
+            case ItemType.Worm:
+                stats.ApplyDelta(0f, +value, +value, 0f);
+                break;
             case ItemType.Campfire:
                 stats.ApplyDelta(0f, 0f, 0f, +value);
                 break;
-            case ItemType.Medkit:
+            case ItemType.FirstAidKit:
                 stats.ApplyDelta(+value, 0f, 0f, 0f);
                 break;
         }
