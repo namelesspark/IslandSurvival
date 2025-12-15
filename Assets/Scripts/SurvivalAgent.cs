@@ -2,6 +2,7 @@ using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
+using Unity.MLAgents.Policies; // 추가
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(StatsSystem))]
@@ -11,6 +12,7 @@ public class SurvivalAgent : Agent
 
     private Rigidbody2D rb;
     private StatsSystem stats;
+    private Animator animator;
 
     // 아이템 사용 범위, 나중에 팀원이 콜라이더/레이로 구현 가능
     public float useRadius = 0.5f;
@@ -20,7 +22,12 @@ public class SurvivalAgent : Agent
     {
         rb = GetComponent<Rigidbody2D>();
         stats = GetComponent<StatsSystem>();
+        animator = GetComponent<Animator>();
+        
+        Debug.Log("SurvivalAgent Initialized!");
     }
+
+    
 
     public override void OnEpisodeBegin()
     {
@@ -52,6 +59,8 @@ public class SurvivalAgent : Agent
 
     public override void OnActionReceived(ActionBuffers actions)
     {
+        Debug.Log("🎯 OnActionReceived called!"); // 디버그
+
         var discrete = actions.DiscreteActions;
         int move = discrete[0]; // 0~4
         int use = discrete[1]; // 0 or 1
@@ -66,6 +75,13 @@ public class SurvivalAgent : Agent
             case 4: dir = Vector2.right; break;
         }
         rb.linearVelocity = dir * moveSpeed;
+
+        // 애니메이션 추가
+        if (animator != null)
+        {
+            animator.SetFloat("x", dir.x);
+            animator.SetFloat("y", dir.y);
+        }
 
         // 아이템 사용
         if (use == 1)
@@ -121,11 +137,13 @@ public class SurvivalAgent : Agent
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
+        Debug.Log("🎮 Heuristic called!"); // 디버그
+
         var discrete = actionsOut.DiscreteActions;
         int move = 0;
         int use = 0;
 
-        if (Input.GetKey(KeyCode.W)) move = 1;
+        if (Input.GetKey(KeyCode.W)) { move = 1; Debug.Log("⬆️ W pressed"); }
         else if (Input.GetKey(KeyCode.S)) move = 2;
         else if (Input.GetKey(KeyCode.A)) move = 3;
         else if (Input.GetKey(KeyCode.D)) move = 4;
@@ -134,5 +152,10 @@ public class SurvivalAgent : Agent
 
         discrete[0] = move;
         discrete[1] = use;
+
+        if (move != 0)
+        {
+            Debug.Log($"🎮 Move={move}, Velocity={rb.linearVelocity}, AnimX={animator.GetFloat("x")}, AnimY={animator.GetFloat("y")}");
+        }
     }
 }
