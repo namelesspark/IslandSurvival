@@ -9,6 +9,33 @@
                 "auxillary_file_paths": [
                     "results\\island_test1\\SurvivalAgent\\SurvivalAgent-23013.pt"
                 ]
+            },
+            {
+                "steps": 49966,
+                "file_path": "results\\island_test1\\SurvivalAgent\\SurvivalAgent-49966.onnx",
+                "reward": null,
+                "creation_time": 1765986344.048379,
+                "auxillary_file_paths": [
+                    "results\\island_test1\\SurvivalAgent\\SurvivalAgent-49966.pt"
+                ]
+            },
+            {
+                "steps": 99975,
+                "file_path": "results\\island_test1\\SurvivalAgent\\SurvivalAgent-99975.onnx",
+                "reward": null,
+                "creation_time": 1765986845.8897922,
+                "auxillary_file_paths": [
+                    "results\\island_test1\\SurvivalAgent\\SurvivalAgent-99975.pt"
+                ]
+            },
+            {
+                "steps": 149996,
+                "file_path": "results\\island_test1\\SurvivalAgent\\SurvivalAgent-149996.onnx",
+                "reward": null,
+                "creation_time": 1765987458.5840888,
+                "auxillary_file_paths": [
+                    "results\\island_test1\\SurvivalAgent\\SurvivalAgent-149996.pt"
+                ]
             }
         ],
         "final_checkpoint": {
