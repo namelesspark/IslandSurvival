@@ -1,0 +1,29 @@
+{
+    "SurvivalAgent": {
+        "checkpoints": [
+            {
+                "steps": 23013,
+                "file_path": "results\\island_test1\\SurvivalAgent\\SurvivalAgent-23013.onnx",
+                "reward": null,
+                "creation_time": 1765986014.976188,
+                "auxillary_file_paths": [
+                    "results\\island_test1\\SurvivalAgent\\SurvivalAgent-23013.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 23013,
+            "file_path": "results\\island_test1\\SurvivalAgent.onnx",
+            "reward": null,
+            "creation_time": 1765986014.976188,
+            "auxillary_file_paths": [
+                "results\\island_test1\\SurvivalAgent\\SurvivalAgent-23013.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

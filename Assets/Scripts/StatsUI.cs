@@ -5,6 +5,7 @@ public class StatsUI : MonoBehaviour
 {
     public StatsSystem stats;
     public TextMeshProUGUI statsText;
+    public DayNight dayNightSystem;
     
     [Header("Display Settings")]
     public bool showDecimals = true;
@@ -41,8 +42,7 @@ public class StatsUI : MonoBehaviour
     
     string GetTimeOfDay()
     {
-        float time = stats.TimeOfDay01;
-        if (time < 0.25f || time > 0.75f)
+        if (dayNightSystem != null && dayNightSystem.IsNight)
             return "<color=#4444FF>Night</color>";
         else
             return "<color=#FFFF00>Day</color>";

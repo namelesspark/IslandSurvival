@@ -1,5 +1,3 @@
-
-
 using UnityEngine;
 
 public enum HazardType
@@ -11,23 +9,42 @@ public enum HazardType
 [RequireComponent(typeof(Collider2D))]
 public class HazardZone : MonoBehaviour
 {
-    public HazardType hazardType;
-    public float tickInterval = 0.5f;
-    public float hungerDeltaPerTick = 0f;
-    public float thirstDeltaPerTick = 0f;
-    public float tempDeltaPerTick = 0f;
-    public float hpDeltaPerTick = 0f;
+    [Header("Hazard Settings")]
+    public HazardType hazardType = HazardType.Heat;
 
-    void OnTriggerStay2D(Collider2D other)
+    [Header("Stat Changes (per second)")]
+    public float hungerDeltaPerSec = 0f;
+    public float thirstDeltaPerSec = 0f;
+    public float tempDeltaPerSec = 0f;
+    public float hpDeltaPerSec = 0f;
+
+    [Header("Visual Feedback")]
+    public bool showWarningOnEnter = true;
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         var stats = other.GetComponent<StatsSystem>();
-        if (stats == null) return;
+        if (stats != null)
+        {
+            // Zone 진입 시 상태와 delta 값 전달
+            stats.SetInHazardZone(true, tempDeltaPerSec, hungerDeltaPerSec, thirstDeltaPerSec, hpDeltaPerSec);
+            
+            if (showWarningOnEnter)
+            {
+                Debug.LogWarning($"⚠️ Entered {hazardType} Hazard Zone!");
+            }
+        }
+    }
 
-        // 간단하게 매 프레임 적용하는 버전 (원하면 코루틴으로 tick 처리)
-        float dt = Time.deltaTime;
-        stats.ApplyDelta(hpDeltaPerTick * dt,
-                         hungerDeltaPerTick * dt,
-                         thirstDeltaPerTick * dt,
-                         tempDeltaPerTick * dt);
+    // OnTriggerStay2D 제거! - StatsSystem에서 처리
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        var stats = other.GetComponent<StatsSystem>();
+        if (stats != null)
+        {
+            stats.SetInHazardZone(false);
+            Debug.Log($"✅ Escaped {hazardType} Hazard Zone");
+        }
     }
 }

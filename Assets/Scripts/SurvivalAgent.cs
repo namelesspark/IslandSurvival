@@ -59,8 +59,6 @@ public class SurvivalAgent : Agent
 
     public override void OnActionReceived(ActionBuffers actions)
     {
-        Debug.Log("🎯 OnActionReceived called!"); // 디버그
-
         var discrete = actions.DiscreteActions;
         int move = discrete[0]; // 0~4
         int use = discrete[1]; // 0 or 1
@@ -74,7 +72,8 @@ public class SurvivalAgent : Agent
             case 3: dir = Vector2.left; break;
             case 4: dir = Vector2.right; break;
         }
-        rb.linearVelocity = dir * moveSpeed;
+        float actualSpeed = moveSpeed * stats.CurrentSpeedMultiplier;
+        rb.linearVelocity = dir * actualSpeed;
 
         // 애니메이션 추가
         if (animator != null)
@@ -143,7 +142,7 @@ public class SurvivalAgent : Agent
         int move = 0;
         int use = 0;
 
-        if (Input.GetKey(KeyCode.W)) { move = 1; Debug.Log("⬆️ W pressed"); }
+        if (Input.GetKey(KeyCode.W)) move = 1;
         else if (Input.GetKey(KeyCode.S)) move = 2;
         else if (Input.GetKey(KeyCode.A)) move = 3;
         else if (Input.GetKey(KeyCode.D)) move = 4;
@@ -152,10 +151,5 @@ public class SurvivalAgent : Agent
 
         discrete[0] = move;
         discrete[1] = use;
-
-        if (move != 0)
-        {
-            Debug.Log($"🎮 Move={move}, Velocity={rb.linearVelocity}, AnimX={animator.GetFloat("x")}, AnimY={animator.GetFloat("y")}");
-        }
     }
 }

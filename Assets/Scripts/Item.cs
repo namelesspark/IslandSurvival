@@ -6,8 +6,7 @@ public enum ItemType
 {
     Fruit,   // 허기+
     Water,     // 갈증+
-    Campfire,  // 체온+
-    Worm,
+    Worm, // 허기+ , 갈증+
     FirstAidKit     // HP+
 }
 
@@ -41,9 +40,6 @@ public class Item : MonoBehaviour
                 break;
             case ItemType.Worm:
                 stats.ApplyDelta(0f, +value, +value, 0f);
-                break;
-            case ItemType.Campfire:
-                stats.ApplyDelta(0f, 0f, 0f, +value);
                 break;
             case ItemType.FirstAidKit:
                 stats.ApplyDelta(+value, 0f, 0f, 0f);

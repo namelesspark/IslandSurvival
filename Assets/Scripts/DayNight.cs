@@ -12,13 +12,25 @@ public class DayNight : MonoBehaviour
     public Color dayColor = Color.white;
     public Color nightColor = new Color(0.3f, 0.3f, 0.5f);
     
+    [Header("Night Threshold")]
+    [Range(0f, 1f)]
+    public float nightThreshold = 0.4f; // 이 값보다 어두우면 밤
+
+    public float NormalizedTime { get; private set; }
+    public float BrightnessValue { get; private set; } // t 값
+    public bool IsNight { get; private set; }
+
     void Update()
     {
         currentTime += Time.deltaTime;
-        float normalizedTime = (currentTime % cycleTime) / cycleTime;
-        float cycleValue = Mathf.Sin(normalizedTime * Mathf.PI * 2);
+        NormalizedTime = (currentTime % cycleTime) / cycleTime;
+        float cycleValue = Mathf.Sin(NormalizedTime * Mathf.PI * 2);
         float t = (cycleValue + 1f) / 2f;
         
+        BrightnessValue = t;
+
+        IsNight = t < nightThreshold;
+
         // 라이트 색상
         if (directionalLight != null)
         {
