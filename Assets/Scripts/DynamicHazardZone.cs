@@ -19,7 +19,7 @@ public class DynamicHazardZone : MonoBehaviour
     public float nightHpDeltaPerSec = 0f;
 
     [Header("Visual Feedback")]
-    public bool showWarningOnEnter = true;
+    public bool showWarningOnEnter = false;
 
     private StatsSystem currentStats = null;
 
@@ -30,7 +30,7 @@ public class DynamicHazardZone : MonoBehaviour
         {
             currentStats = stats;
             UpdateHazardValues();
-            
+
             if (showWarningOnEnter)
             {
                 string time = (dayNightSystem != null && dayNightSystem.IsNight) ? "Night" : "Day";

@@ -49613,6 +49613,14 @@ MonoBehaviour:
   itemLayer:
     serializedVersion: 2
     m_Bits: 1024
+  experimentTag: ppo
+  logEpisodeToConsole: 0
+  aliveReward: 0.002
+  riskPenaltyWeight: 0.0015
+  deltaRiskShaping: 0.01
+  hazardPenalty: 0.0005
+  deathPenalty: -5
+  itemUseReward: 0.02
 --- !u!114 &2021693732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49645,6 +49653,8 @@ MonoBehaviour:
   lowThreshold: 20
   hpPenaltyAtLow: 1.5
   dayNightSystem: {fileID: 2120877745}
+  trainingSafeStart: 0
+  enableDebugLogs: 0
 --- !u!114 &2021693733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49658,7 +49668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.Policies.BehaviorParameters
   m_BrainParameters:
-    VectorObservationSize: 9
+    VectorObservationSize: 12
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -49669,7 +49679,7 @@ MonoBehaviour:
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
-  m_BehaviorType: 1
+  m_BehaviorType: 0
   m_BehaviorName: SurvivalAgent
   TeamId: 0
   m_UseChildSensors: 1
