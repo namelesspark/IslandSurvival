@@ -1,0 +1,56 @@
+{
+    "SurvivalAgent": {
+        "checkpoints": [
+            {
+                "steps": 23013,
+                "file_path": "results\\island_test1\\SurvivalAgent\\SurvivalAgent-23013.onnx",
+                "reward": null,
+                "creation_time": 1765986014.976188,
+                "auxillary_file_paths": [
+                    "results\\island_test1\\SurvivalAgent\\SurvivalAgent-23013.pt"
+                ]
+            },
+            {
+                "steps": 49966,
+                "file_path": "results\\island_test1\\SurvivalAgent\\SurvivalAgent-49966.onnx",
+                "reward": null,
+                "creation_time": 1765986344.048379,
+                "auxillary_file_paths": [
+                    "results\\island_test1\\SurvivalAgent\\SurvivalAgent-49966.pt"
+                ]
+            },
+            {
+                "steps": 99975,
+                "file_path": "results\\island_test1\\SurvivalAgent\\SurvivalAgent-99975.onnx",
+                "reward": null,
+                "creation_time": 1765986845.8897922,
+                "auxillary_file_paths": [
+                    "results\\island_test1\\SurvivalAgent\\SurvivalAgent-99975.pt"
+                ]
+            },
+            {
+                "steps": 149996,
+                "file_path": "results\\island_test1\\SurvivalAgent\\SurvivalAgent-149996.onnx",
+                "reward": null,
+                "creation_time": 1765987458.5840888,
+                "auxillary_file_paths": [
+                    "results\\island_test1\\SurvivalAgent\\SurvivalAgent-149996.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 23013,
+            "file_path": "results\\island_test1\\SurvivalAgent.onnx",
+            "reward": null,
+            "creation_time": 1765986014.976188,
+            "auxillary_file_paths": [
+                "results\\island_test1\\SurvivalAgent\\SurvivalAgent-23013.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

@@ -162,7 +162,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ml-agents": {
-      "version": "file:C:/Users/Administrator/ml-agents/com.unity.ml-agents",
+      "version": "file:C:/Users/km/Downloads/ml-agents-release_17/ml-agents-release_17/com.unity.ml-agents",
       "depth": 0,
       "source": "local",
       "dependencies": {
